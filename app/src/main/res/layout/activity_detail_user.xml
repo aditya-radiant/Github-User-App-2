@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".DetailUserActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:adjustViewBounds="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="ContentDescription"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                style="@style/TextItem.Field"
+                android:text="@string/name" />
+
+            <TextView
+                android:id="@+id/tv_user_name"
+                style="@style/TextItem.Value"
+                tools:text="@string/name" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                style="@style/TextItem.Field"
+                android:text="@string/user_name" />
+
+            <TextView
+                android:id="@+id/tv_name"
+                style="@style/TextItem.Value"
+                android:text="@string/user_name" />
+        </TableRow>
+    </TableLayout>
+
+    <TextView
+        android:id="@+id/follower"
+        style="@style/TextTitle.Tiny"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/str_followers"
+        app:layout_constraintEnd_toEndOf="@+id/tableLayout"
+        app:layout_constraintHorizontal_bias="0.35"
+        app:layout_constraintStart_toStartOf="@+id/tableLayout"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
+
+    <TextView
+        android:id="@+id/following"
+        style="@style/TextTitle.Tiny"
+        android:layout_marginTop="8dp"
+        android:text="@string/str_following"
+        app:layout_constraintEnd_toEndOf="@+id/tableLayout"
+        app:layout_constraintHorizontal_bias="0.65"
+        app:layout_constraintStart_toStartOf="@+id/tableLayout"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
+
+    <TextView
+        android:id="@+id/tv_followers"
+        style="@style/TextTitle.Tiny"
+        app:layout_constraintEnd_toEndOf="@+id/follower"
+        app:layout_constraintStart_toStartOf="@+id/follower"
+        app:layout_constraintTop_toBottomOf="@+id/follower"
+        tools:text="@string/str_followers" />
+
+    <TextView
+        android:id="@+id/tv_following"
+        style="@style/TextTitle.Tiny"
+        app:layout_constraintEnd_toEndOf="@+id/following"
+        app:layout_constraintStart_toStartOf="@+id/following"
+        app:layout_constraintTop_toBottomOf="@+id/following"
+        tools:text="@string/str_following" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/user_tab"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_followers"
+        app:layout_constraintVertical_bias="0.0"
+        app:tabTextColor="@color/gray_med" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/user_pager"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/user_tab" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/user_tab"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:indeterminateDrawable="@drawable/prog_bar"
+        android:progress="0"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
